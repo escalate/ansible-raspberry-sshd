@@ -1,6 +1,6 @@
 # Ansible Role: Raspberry - sshd
 
-[![CI](https://github.com/escalate/ansible-raspberry-sshd/workflows/CI/badge.svg?event=push)](https://github.com/escalate/ansible-raspberry-sshd/actions?query=workflow%3ACI)
+[![CI](https://github.com/escalate/ansible-raspberry-sshd/actions/workflows/ci.yml/badge.svg?event=push)](https://github.com/escalate/ansible-raspberry-sshd/actions/workflows/ci.yml)
 
 An Ansible role that manages [OpenSSH - sshd](https://www.openssh.com) on Raspberry Pi OS.
 
