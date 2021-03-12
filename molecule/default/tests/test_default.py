@@ -15,7 +15,7 @@ def test_sshd_config(host, config):
 
 
 def test_sshd_service(host):
-    """Check if sshd service is running and enabled"""
+    """Check sshd service"""
     s = host.service("sshd")
     assert s.is_running
     assert s.is_enabled
