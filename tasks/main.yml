@@ -1,10 +1,10 @@
-- name: Install openssh-server package
+- name: Install package
   ansible.builtin.apt:
     name: openssh-server
     state: present
     update_cache: true
 
-- name: Create configuration for sshd service
+- name: Create service configuration
   ansible.builtin.template:
     src: sshd_config.j2
     dest: /etc/ssh/sshd_config
@@ -12,9 +12,9 @@
     group: root
     mode: 0600
     validate: "sshd -t -f %s"
-  notify: Restart sshd service
+  notify: Restart service
 
-- name: Start and enable sshd service
+- name: Start and enable service
   ansible.builtin.systemd:
     name: sshd
     state: started
@@ -24,6 +24,6 @@
 - name: Force all notified handlers to run at this point
   meta: flush_handlers
 
-- name: Wait for sshd service to become available
+- name: Wait for service to become available
   ansible.builtin.wait_for:
     port: 22
