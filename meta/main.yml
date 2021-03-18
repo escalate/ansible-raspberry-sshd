@@ -1,4 +1,5 @@
 galaxy_info:
+  role_name: raspberry_sshd
   author: Felix Boerner
   description: Manage sshd on Raspberry Pi OS
   license: MIT
