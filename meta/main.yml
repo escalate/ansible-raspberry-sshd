@@ -1,5 +1,5 @@
 galaxy_info:
-  role_name: raspberry_sshd
+  role_name: sshd
   namespace: escalate
   author: Felix Boerner
   description: Manage sshd on Raspberry Pi OS

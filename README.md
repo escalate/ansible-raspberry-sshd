@@ -7,7 +7,7 @@ An Ansible role that manages [OpenSSH - sshd](https://www.openssh.com) on Raspbe
 ## Install
 
 ```
-$ ansible-galaxy install escalate.raspberry_sshd
+$ ansible-galaxy install escalate.sshd
 ```
 
 ## Role Variables
@@ -26,7 +26,7 @@ This role relies on the following dependencies:
 ```
 - hosts: all
   roles:
-    - role: escalate.raspberry_sshd
+    - role: escalate.sshd
       tags: sshd
 ```
 
