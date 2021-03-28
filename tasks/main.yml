@@ -12,7 +12,7 @@
     group: root
     mode: 0600
     validate: "sshd -t -f %s"
-  notify: Restart service
+  notify: Restart sshd service
 
 - name: Start and enable service
   ansible.builtin.systemd:
