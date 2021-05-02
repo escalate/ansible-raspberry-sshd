@@ -1,6 +1,6 @@
-# Ansible Role: Raspberry - sshd
+[![Molecule](https://github.com/escalate/ansible-raspberry-sshd/actions/workflows/molecule.yml/badge.svg?branch=master&event=push)](https://github.com/escalate/ansible-raspberry-sshd/actions/workflows/molecule.yml)
 
-[![CI](https://github.com/escalate/ansible-raspberry-sshd/actions/workflows/ci.yml/badge.svg?event=push)](https://github.com/escalate/ansible-raspberry-sshd/actions/workflows/ci.yml)
+# Ansible Role: Raspberry - sshd
 
 An Ansible role that manages [OpenSSH - sshd](https://www.openssh.com) on Raspberry Pi OS.
 
