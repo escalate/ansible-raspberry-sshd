@@ -1,3 +1,5 @@
+Include /etc/ssh/sshd_config.d/*.conf
+
 Port 22
 #AddressFamily any
 #ListenAddress 0.0.0.0
@@ -29,7 +31,7 @@ AuthorizedKeysFile .ssh/authorized_keys
 #IgnoreUserKnownHosts no
 #IgnoreRhosts yes
 PasswordAuthentication no
-#PermitEmptyPasswords no
+PermitEmptyPasswords no
 ChallengeResponseAuthentication no
 
 # Kerberos options
@@ -52,7 +54,7 @@ X11Forwarding no
 #X11DisplayOffset 10
 #X11UseLocalhost yes
 #PermitTTY yes
-PrintMotd yes
+PrintMotd no
 #PrintLastLog yes
 #TCPKeepAlive yes
 #PermitUserEnvironment no
