@@ -1,13 +1,9 @@
 """Role testing files using testinfra."""
 
-
 import pytest
 
 
-@pytest.mark.parametrize("config", [
-    ("LogLevel INFO"),
-    ("AllowGroups operator")
-])
+@pytest.mark.parametrize("config", [("LogLevel INFO"), ("AllowGroups operator")])
 def test_sshd_config(host, config):
     """Check sshd config file"""
     f = host.file("/etc/ssh/sshd_config")

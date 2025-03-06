@@ -12,8 +12,8 @@ Please see [defaults/main.yml](https://github.com/escalate/ansible-raspberry-ssh
 
 This role relies on the following dependencies:
 
-* Roles: None
-* Collections: None
+- Roles: None
+- Collections: None
 
 ## Installation
 
