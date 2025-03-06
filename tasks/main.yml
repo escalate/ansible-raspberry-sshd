@@ -10,7 +10,7 @@
     dest: /etc/ssh/sshd_config
     owner: root
     group: root
-    mode: 0600
+    mode: "0600"
     validate: "sshd -t -f %s"
   notify: Restart sshd service
 
