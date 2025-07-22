@@ -1,70 +1,69 @@
 Include /etc/ssh/sshd_config.d/*.conf
 
 Port 22
-#AddressFamily any
-#ListenAddress 0.0.0.0
-#ListenAddress ::
+AddressFamily any
+ListenAddress 0.0.0.0
+ListenAddress ::
 
-#HostKey /etc/ssh/ssh_host_rsa_key
-#HostKey /etc/ssh/ssh_host_ecdsa_key
-#HostKey /etc/ssh/ssh_host_ed25519_key
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
 
 # Ciphers and keying
-#RekeyLimit default none
+RekeyLimit default none
 
 # Logging
-#SyslogFacility AUTH
+SyslogFacility AUTH
 LogLevel {{ sshd_loglevel }}
 
 # Authentication
 LoginGraceTime 60
 PermitRootLogin no
 StrictModes yes
-MaxAuthTries 3
+MaxAuthTries 4
 MaxSessions 10
 PubkeyAuthentication yes
 AuthorizedKeysFile .ssh/authorized_keys
 AuthorizedPrincipalsFile none
-#AuthorizedKeysCommand none
-#AuthorizedKeysCommandUser nobody
+AuthorizedKeysCommand none
+AuthorizedKeysCommandUser nobody
 HostbasedAuthentication no
-IgnoreUserKnownHosts yes
+IgnoreUserKnownHosts no
 IgnoreRhosts yes
 PasswordAuthentication no
 PermitEmptyPasswords no
 KbdInteractiveAuthentication no
 KerberosAuthentication no
-#KerberosOrLocalPasswd yes
-#KerberosTicketCleanup yes
-#KerberosGetAFSToken no
-
+KerberosOrLocalPasswd yes
+KerberosTicketCleanup yes
+KerberosGetAFSToken no
 GSSAPIAuthentication no
-#GSSAPICleanupCredentials yes
-#GSSAPIStrictAcceptorCheck yes
-#GSSAPIKeyExchange no
+GSSAPICleanupCredentials yes
+GSSAPIStrictAcceptorCheck yes
+GSSAPIKeyExchange no
 UsePAM yes
 
 AllowAgentForwarding yes
 AllowTcpForwarding yes
-#GatewayPorts no
+GatewayPorts no
 X11Forwarding no
-#X11DisplayOffset 10
-#X11UseLocalhost yes
-#PermitTTY yes
+X11DisplayOffset 10
+X11UseLocalhost yes
+PermitTTY yes
 PrintMotd no
-#PrintLastLog yes
-#TCPKeepAlive yes
+PrintLastLog yes
+TCPKeepAlive yes
 PermitUserEnvironment no
-#Compression delayed
+Compression delayed
 ClientAliveInterval 300
 ClientAliveCountMax 0
 UseDNS no
-#PidFile /run/sshd.pid
-#MaxStartups 10:30:100
-#PermitTunnel no
-#ChrootDirectory none
-#VersionAddendum none
-#Banner none
+PidFile /run/sshd.pid
+MaxStartups 10:30:60
+PermitTunnel no
+ChrootDirectory none
+VersionAddendum none
+Banner none
 
 # Allow client to pass locale environment variables
 AcceptEnv LANG LC_*
