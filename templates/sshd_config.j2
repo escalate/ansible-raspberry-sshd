@@ -17,38 +17,35 @@ Port 22
 LogLevel {{ sshd_loglevel }}
 
 # Authentication
-LoginGraceTime 1m
+LoginGraceTime 60
 PermitRootLogin no
-#StrictModes yes
+StrictModes yes
 MaxAuthTries 3
-#MaxSessions 10
-#PubkeyAuthentication yes
+MaxSessions 10
+PubkeyAuthentication yes
 AuthorizedKeysFile .ssh/authorized_keys
-#AuthorizedPrincipalsFile none
+AuthorizedPrincipalsFile none
 #AuthorizedKeysCommand none
 #AuthorizedKeysCommandUser nobody
-#HostbasedAuthentication no
-#IgnoreUserKnownHosts no
-#IgnoreRhosts yes
+HostbasedAuthentication no
+IgnoreUserKnownHosts yes
+IgnoreRhosts yes
 PasswordAuthentication no
 PermitEmptyPasswords no
-ChallengeResponseAuthentication no
-
-# Kerberos options
-#KerberosAuthentication no
+KbdInteractiveAuthentication no
+KerberosAuthentication no
 #KerberosOrLocalPasswd yes
 #KerberosTicketCleanup yes
 #KerberosGetAFSToken no
 
-# GSSAPI options
-#GSSAPIAuthentication no
+GSSAPIAuthentication no
 #GSSAPICleanupCredentials yes
 #GSSAPIStrictAcceptorCheck yes
 #GSSAPIKeyExchange no
 UsePAM yes
 
-#AllowAgentForwarding yes
-#AllowTcpForwarding yes
+AllowAgentForwarding yes
+AllowTcpForwarding yes
 #GatewayPorts no
 X11Forwarding no
 #X11DisplayOffset 10
@@ -57,12 +54,12 @@ X11Forwarding no
 PrintMotd no
 #PrintLastLog yes
 #TCPKeepAlive yes
-#PermitUserEnvironment no
+PermitUserEnvironment no
 #Compression delayed
-#ClientAliveInterval 0
-#ClientAliveCountMax 3
-#UseDNS no
-#PidFile /var/run/sshd.pid
+ClientAliveInterval 300
+ClientAliveCountMax 0
+UseDNS no
+#PidFile /run/sshd.pid
 #MaxStartups 10:30:100
 #PermitTunnel no
 #ChrootDirectory none
